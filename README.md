@@ -16,3 +16,7 @@ $id = stub($url,1);
 // Result: 9999
 // So just look it up "SELECT * FROM stubs WHERE id = $id"
 ```
+
+### If using inside sub directory
+modify your path in htaccess
+`RewriteBase /subdir/`
