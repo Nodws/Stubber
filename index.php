@@ -43,8 +43,7 @@ if($uid && !in_array($uid, $pages))
 </head>
 <body>
 <h1><?=ucfirst($domain) ?></h1>
-	<?
-		require "insert.php";
+	<? require "insert.php";
 	?>
 <form action="" method="post">
 	<input type="url" placeholder="Your Url" name="url"> <br>

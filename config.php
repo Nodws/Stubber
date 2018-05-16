@@ -5,10 +5,10 @@ $ssl = true;
 $cache = false; //Use html files
 $cdir = 'uid'; //Cache directory no trailing slash, allow write
 $debug = true; //Show errors
-$pages = Array('about','contact'); //List of pages excluded from redirection
+$pages = ['about','contact']; //List of pages excluded from redirection
 
 // Database
-$conn = Array('localhost', 'root', 'pass', 'db');
+$conn = ['localhost', 'root', 'pass', 'db'];
 
 
 
@@ -17,7 +17,10 @@ $conn = Array('localhost', 'root', 'pass', 'db');
 	No need to edit anything below this line
 	-=-=-=-=-=-=-=-=-=	*/
 
-$uid = ctype_alnum($_GET[uid]) ? $_GET[uid] : false;
+$args = explode('/', trim($_SERVER['QUERY_STRING'],'/'));
+
+$uid = ctype_alnum($args[0]) ? $args[0] : false;
+$del = ($args[1]=='del' && ctype_alnum($args[2])) ? $args[2] : false;
 
 function conn()
 {	global $conn;

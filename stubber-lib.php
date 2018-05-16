@@ -13,10 +13,11 @@
  * @license     http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  */
 
-function stub($id,$rev=0){
-	if($rev)
-	return intval($id,36);
-	return base_convert($id, 10, 36);
-}
+function stub($id,$rev=0)
+  {
+
+	  return ($rev!=0) ? intval($id,36) : base_convert($id, 10, 36);
+ 
+  }
 
 ?>
